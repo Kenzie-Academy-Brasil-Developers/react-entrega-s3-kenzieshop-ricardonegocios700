@@ -1,4 +1,4 @@
-export const ListItems = ({ item: { image, name, price } }) => {
+export const ListItems = ({ item, item: { image, name, price } }) => {
   return (
     <>
       <div>

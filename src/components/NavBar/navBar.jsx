@@ -1,9 +1,21 @@
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { IoMdCart } from "react-icons/io";
 
 export const NavBar = () => {
+  const carrinho = useSelector((state) => state.cart);
+  const countCarrinho = carrinho.length;
+  const someCarrinho = carrinho.reduce((acc, item) => {
+    return acc + item.price;
+  }, 0);
+
   return (
     <nav>
-      <span class="msg">Carrinho: x itens, R$ 1.000,00</span>
+      {!!carrinho[0] && (
+        <div class="msg">
+          <IoMdCart /> {countCarrinho} itens, R$ {someCarrinho.toFixed(2)}
+        </div>
+      )}
       <div id="navlogo">
         <img src="https://kenzie.com.br/images/logoblue.svg" alt="logo" />
       </div>

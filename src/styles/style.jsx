@@ -6,7 +6,7 @@ export const NavBarCSS = styled.div`
   border-bottom: solid 1px black;
   border-bottom-right-radius: 80px;
   border-bottom-left-radius: 80px;
-  background-color: #ff8c20;
+  background-color: var(--laranja);
   nav {
     display: flex;
     flex-direction: column;
@@ -16,6 +16,7 @@ export const NavBarCSS = styled.div`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    margin-bottom: 10px;
   }
   a {
     padding: 10px;
@@ -25,30 +26,52 @@ export const NavBarCSS = styled.div`
     width: 50px;
   }
   .msg {
-    color: blue;
+    color: var(--azul);
+    align-self: flex-end;
+    margin-right: 10px;
+    svg {
+      color: var(--azul);
+      width: 18px;
+      padding-top: 3px;
+    }
   }
 `;
 
 export const ProductsCSS = styled.div`
   text-align: center;
   h1 {
-    color: #0c5088;
-    text-shadow: #ff8c20 -0.75px -0.75px 2px;
+    color: var(--azul);
+    text-shadow: var(--laranja) -0.75px -0.75px 2px;
     font-size: 40px;
     margin: 10px;
   }
+
+  svg {
+    color: var(--azul);
+  }
   button {
-    background-color: #ff8c20;
+    background-color: var(--laranja);
     padding: 6px;
     border: none;
-    border-radius: 10px;
-    width: 100%;
-    color: white;
+    width: 75%;
+    color: var(--azul);
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .products div:nth-child(even) button {
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 15px;
+  }
+  .products div:nth-child(odd) button {
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
   }
   .products {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+
     div {
       padding: 15px;
       flex-basis: 200px;
@@ -68,25 +91,16 @@ export const ProductsCSS = styled.div`
   }
 `;
 
-const teste = styled.div`
-  #navegacao {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: nowrap;
-    align-items: stretch;
-    position: relative;
-  }
-  #navLeft {
-    order: 1;
-    flex-grow: 4;
-  }
-  #navRight {
-    order: 2;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    right: 0;
+export const RodapeCSS = styled.div`
+  background-color: var(--azul);
+  width: 100vw;
+  min-height: 10vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  span {
+    font-size: smaller;
   }
 `;

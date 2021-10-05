@@ -1,8 +1,9 @@
 import { Route, Switch } from "react-router";
 import { NavBar } from "../components/NavBar/navBar.jsx";
+import { Rodape } from "../components/Rodape/rodape.jsx";
 import { Cart } from "../pages/Cart/cart";
 import { Products } from "../pages/Products/products";
-import { NavBarCSS, ProductsCSS } from "../styles/style";
+import { NavBarCSS, ProductsCSS, RodapeCSS } from "../styles/style";
 
 export const Routes = () => {
   return (
@@ -22,6 +23,10 @@ export const Routes = () => {
           </ProductsCSS>
         </Route>
       </Switch>
+
+      <RodapeCSS>
+        <Rodape />
+      </RodapeCSS>
     </>
   );
 };

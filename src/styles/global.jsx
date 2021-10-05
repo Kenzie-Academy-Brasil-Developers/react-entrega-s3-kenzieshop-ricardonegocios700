@@ -1,6 +1,10 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
+:root {
+  --laranja: #ff8c20;
+  --azul: #037ff7;
+}
 // Reset
 html {
   line-height: 1.15; /* 1 */
